@@ -9,7 +9,7 @@ urlpatterns = [
     path("service", views.service, name="service"),
     path("FAQs", views.FAQs, name="FAQs"),
     path("about", views.about, name="about"),
-    path("login", views.login, name="login"),
+    path("login", views.loginuser, name="login"),
     path("tfare", views.tfare, name="tfare"),
     path("user", views.user, name="user"),
     path("userdetail", views.userdetail, name="userdetail"),
@@ -17,6 +17,7 @@ urlpatterns = [
     path("userbooking", views.userbooking, name="userbooking"),
     path("tbooking", views.tbooking, name="tbooking"),
     path("signUp", views.signUp, name="signUp"),
+    path('logout',views.logoutuser, name="logout")
 
 
 

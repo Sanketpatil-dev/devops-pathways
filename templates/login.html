@@ -17,9 +17,10 @@
             <p>Please enter your credentials to login.</p>
           </div>
         </div>
-        <form class="login-form">
-          <input type="text" placeholder="username"/>
-          <input type="password" placeholder="password"/>
+        <form class="login-form" action ="/login" method ="POST">
+          {% csrf_token%}
+          <input type="text" id = "fname" name = "fname" placeholder="username"/>
+          <input type="password" id = "pswd" name= "pswd" placeholder="password"/>
           <button type="submit" class="btn" style="background: #dfbd9f;">Log In</button>
           <p class="message">Not registered? <a href="/signUp">Create an account</a></p>
         </form>

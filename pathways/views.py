@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from pathways.models import contactus, bookticket, signup
-from datetime import datetime
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 from django.shortcuts import render, HttpResponse
@@ -21,6 +22,7 @@ def contact_us(request):
         email=request.POST.get('email')
         message=request.POST.get('message')
         contact_us = contactus(name=name, contact=contact, email=email, message=message)
+        
         contact_us.save()
       
     return render(request, 'contact_us.html')
@@ -34,13 +36,28 @@ def FAQs(request):
 def about(request):
     return render(request, 'about.html')
 
-def login(request):
+def loginuser(request):
+    if request.method=="POST":
+        fname=request.POST.get('fname')
+        pswd=request.POST.get('pswd')
+        user = authenticate(username=fname, password=pswd)
+        if user is not None:
+            login(request, user)
+            return redirect ("/user")
+
+        else:
+            return render(request, 'login.html')
+
     return render(request, 'login.html')
+
 
 def tfare(request):
     return render(request, 'tfare.html')
 
 def user(request):
+    print(request.user)
+    if  request.user.is_anonymous:
+        return redirect("/login")
     return render(request, 'user.html')
 
 def userdetail(request):
@@ -60,6 +77,8 @@ def signUp(request):
         emailid=request.POST.get('emailid')
         pswd=request.POST.get('pswd')
         sign= signup(fname=fname, lname=lname, phnum=phnum, emailid=emailid, pswd=pswd)
+        user = User.objects.create_user(fname, emailid, pswd )
+        user.save()
         sign.save()
 
     return render(request, 'signUp.html')
@@ -79,3 +98,8 @@ def tbooking(request):
         book_ticket.save()
 
     return render(request, 'tbooking.html')
+
+def logoutuser(request):
+    logout(request)
+    return redirect ("/index")
+    

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+{%extends 'template.html'%}
+<html>
+<head>
+	{%block head%}
+	<title>Services</title>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		
+		.firstsection {
+			background-color: rgb(153, 161, 153);
+			height: 400px;
+		}
+
+		.secondsection {
+			background-color: rgb(213, 213, 235);
+			height: 400px;
+		}
+
+		.box-main {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: black;
+			max-width: 80%;
+			margin: auto;
+			height: 80%;
+		}
+
+		.firsthalf {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		.secondhalf {
+			width: 30%;
+		}
+
+		.secondhalf img {
+			width: 70%;
+			border: 4px solid white;
+			border-radius: 150px;
+			display: block;
+			margin: auto;
+		}
+
+		.text-big {
+			font-weight: bold;
+			font-size: 35px;
+		}
+
+		.text-small {
+			font-size: 18px;
+		}
+
+		.btn {
+			padding: 8px 20px;
+			margin: 7px 0;
+			border: 2px solid white;
+			border-radius: 8px;
+			background: none;
+			color: white;
+			cursor: pointer;
+		}
+
+		.btn-sm {
+			padding: 6px 10px;
+			vertical-align: middle;
+		}
+
+		.section {
+			height: 400px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			max-width: 90%;
+			margin: auto;
+		}
+
+		.section-Left {
+			flex-direction: row-reverse;
+		}
+
+		.paras {
+			padding: 0px 65px;
+		}
+
+		.thumbnail img {
+			width: 250px;
+			border: 2px solid black;
+			border-radius: 26px;
+			margin-top: 19px;
+		}
+
+		.center {
+			text-align: center;
+		}
+
+		
+	</style>
+	{%endblock head%}
+</head>
+
+<body>
+{%block body%}
+    
+
+	<section class="firstsection">
+		<div class="box-main">
+			<div class="firstHalf">
+				<h1 class="text-big" id="web">Accessibility</h1>
+				<p class="text-small">
+				    is committed to the provision of a fully accessible public transport system incorporating fully accessible vehicles and infrastructure. All vehicles operating on our scheduled services have:
+                    A suspension-lowering feature that can be used to assist passengers with boarding, simply request the driver to kneel the vehicle
+                    Entrance areas fitted with grab rails in contrasting colours that feature stop request buttons
+                    Public Address systems,
+                    Destination displays,
+                    On-board monitors.
+                    We are continuing to roll out onboard “next stop” audio announcements across our network. This initiative has already commenced with all stops in Waterford, Sligo, Galway and Limerick live..
+				</p></div>
+				<div class="thumbnail">
+					<img src= "static/sbus1.jpg" alt="laptop image">
+				</div>
+
+			
+		</div>
+	</section>
+
+	<div>
+     <marquee  behavior="scroll" direction="left">        
+            <img src="static/sbus2.jpg" width="500" height="300" alt="Natural"> 
+      </marquee>  
+        
+     
+     <marquee  behavior="scroll" direction="right">         
+            <img src= "static/sbus3.jpg" width="500" height="300" alt="Natural"> 
+      </marquee>  
+  
+	</div>
+
+	<section class="secondsection">
+		<div class="box-main">
+			<div class="firstHalf">
+				<h1 class="text-big" id="program">
+					Wheelchair Accessibility
+				</h1>
+				<p class="text-small">
+					Following investment in our fleet, 100% of our vehicles are now accessible.
+
+While wheelchair accessibility is available on all coaches operating on Pathways services, routes may be limited due to constraints regarding accessible bus stops or the use of contractor vehicles, required due to operational issues, which may be non-accessible. The introduction of additional fully accessible routes is dependent on the provision of suitable bus stop infrastructure and other operational issues. 
+
+We are working with the NTA and local authorities regarding the design of new bus stop developments, which will facilitate our customers being collected and delivered at these designated bus stops in a safe manner.  We are also working with the National Transport Authority (NTA) regarding the bus station and stop infrastructure and to identify vehicle types best suited to the varying needs of all our customers while also suitable for roads and associated infrastructure.  
+				</p>
+
+
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="paras">
+			<h1 class="sectionTag text-big">How to Book</h1>
+			<p class="sectionSubTag text-small">
+			
+To reserve accessible transport on an Pathways service, intending passengers should book online at least 24 hours in advance of travel using the standard process.
+
+Customers travelling with a wheelchair are requested to arrive 15 minutes before the schedule bus departure time.
+			</p>
+
+
+		</div>
+
+		<div class="thumbnail">
+			<img src= "static/sbus4.jpg" alt="laptop image">
+		</div>
+	</section>
+
+
+
+
+
+{%endblock body%}	
+</body>
+
+</html>

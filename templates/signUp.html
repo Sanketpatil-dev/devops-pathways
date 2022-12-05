@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  {%extends 'template.html'%}
+<head>
+  {%block head%}
+<link rel="stylesheet" href="static/login.css">
+<title> Sign Up</title>
+{%endblock head%}
+</head>
+  <body>
+    {%block body%}
+    <div class="login-page">
+      <div class="form">
+        <div class="login">
+          <div class="login-header">
+            <h3>SIGN UP</h3>
+            <p>Please enter your credentials to register.</p>
+          </div>
+        </div>
+        <form  action="/signUp" method="POST">
+          {% csrf_token %}
+
+          <div class="box">
+              <input type="text" id="fname" name="fname" placeholder="First name"  >
+              <input type="text" id="lname" name="lname" placeholder="Last Name" >
+              <input type="text" id="phnum" name="phnum" placeholder="Phone number" >
+              <input type="text" id="emailid" name="emailid" placeholder="Email id" >
+              <input type="password" id="pswd" name="pswd" placeholder="Password" >
+              <input type="Password" id="repass" name="repass" placeholder="Retype password"> <br>
+              <input type="checkbox" name="Terms" required> &nbsp; I accept the terms and conditions
+            <br><br>
+              <input type="submit" value="Submit" >
+
+              <p> Click Here to <a href="login">Login</p>
+
+
+          </div>
+        </form>
+      </div>
+    </div>
+    {%endblock body%}
+</body>
+</html>

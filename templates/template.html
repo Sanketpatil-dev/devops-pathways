@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="static/template.css" rel="stylesheet">
+{%block head%} {%endblock head%}
+</head>
+
+<body>
+
+<div style = " position: relative ; padding: 14px 16px; background-color: #F1E6BD;  ">
+  <ul>
+    <li style="font-size:16px; text-aligh : Center; float:left"><a href="index"><img src = "static/logo1.jpg" width="50"></a></li>
+    <li style = "margin-left:18%">
+        <div class="dropdown">
+        <button class="dropbtn">Plans</button>
+        <div  class="dropdown-content">  
+          <a style = "  font-size:16px;" href="destination">Destinations</a>
+          <a style = "  font-size:16px;" href="tfare">Tickest and Fares</a>
+        </div>
+      </div> 
+    </li>
+    <li style = "margin-left:20%; font-size:16px; font-family: Verdana, sans-serif;"><a href="user" style="text-decoration:none">My Account</a></li>
+    <li style = "margin-left:20%">
+        <div class="dropdown">
+        <button class="dropbtn">Company</button>
+        <div class="dropdown-content">  
+          <a style = "  font-size:16px;" href="service">Services</a>
+          <a style = "  font-size:16px;" href="about">About Us</a>
+          <a style = "  font-size:16px;" href="contact_us">Contact Us</a>
+          <a style = "  font-size:16px;" href="FAQs">FAQs</a>
+        </div>
+      </div> 
+    </li>
+    <li style = " float: right; font-size:16px;"  ><a style="text-decoration:none" href="login">Log In</a></li> 
+  </ul>
+</div>
+<div>
+  {%block body%}  {% endblock body%}
+</div>
+
+<footer class="background">
+  <p class="text-footer">
+    Copyright ©-All rights are reserved
+  </p>
+</footer>
+
+
+</body>
+</html> 

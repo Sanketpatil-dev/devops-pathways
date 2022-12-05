@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    {% extends 'template.html' %}
+<head>
+    {% block head%}
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 4px solid #F1E6BD;
+  text-align: center;
+  padding: 20px;
+}
+
+tr:nth-child(even) {
+  background-color: #F1E6BD;
+}
+
+.size {
+    margin-left:33%;
+    margin-right:33%;
+    margin-top:10%;
+    margin-bottom:10%;
+}
+</style>
+
+<title>User Dashboard </title>
+{%endblock head%}
+</head>
+<body>
+{%block body%}
+<div class="size">
+<table>
+  <tr>
+    <th>Company</th>
+    
+  </tr>
+  <tr>
+    <td><a href="userdetail" style="text-decoration:none">My Profile</a></td>
+    
+  </tr>
+  <tr>
+    <td><a href="payment" style="text-decoration:none">Payment Details</a></td>
+    
+  </tr>
+  <tr>
+    <td><a href="userbooking" style="text-decoration:none">My Booking</a></td>
+    
+  </tr>
+  <tr>
+    <td><a href="tbooking" style="text-decoration:none">Book Ticket</a></td>
+    
+  </tr>
+  
+</table>
+</div>
+{%endblock body%}
+</body>
+</html>
+

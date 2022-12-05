@@ -1,0 +1,70 @@
+<html lang="en">
+    {%extends 'template.html'%}
+<head>
+    {%block head%}
+    <meta charset="UTF-8">
+    <title>Contact Us </title>
+    <link rel="stylesheet" href="static/contact.css">
+    <title> Connect With us </title>
+    {%endblock head%}
+
+
+</head>
+<body>
+    {%block body%}
+    <div class="container">
+        <h1>Connect With Us</h1>
+        <p> We would love to respond to your queries.Feel free to get in touch with us.</p>
+
+        <div class="contact-box">
+            <div class="contact-left">
+                <h3>Send us your request</h3>
+                <form action="/contact_us" method="POST">
+                    {% csrf_token %}
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Berick" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="contact">Phone </label>
+                            <input type="text" id="contact" name="contact" placeholder="+1 468 758 092" required>
+                        </div>
+                    </div>
+
+
+                    <div class="input-row">
+                        
+                        <div class="input-group">
+                            <label for="email">Email </label>
+                            <input type="email" id="email" name="email" placeholder="johnBerick@gmail.com" required>
+                        </div>
+                    </div>
+
+
+                    <label for="messsage">Message</label>
+                    <textarea rows="5" id="message" name="message" placeholder="Your Message" required></textarea>
+
+                    <button type="submit" class="btn">SEND</button>
+
+                </form>
+
+            </div>
+
+            <div class="contact-right">
+                <div class="ContactInfo">
+                    <div class="box">
+                        <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Address</h3>
+                            <p>guyvuvbhjvyughjbhybhjb</p>
+                        </div>
+                    </div>
+            </div>            
+            </div>
+        </div>
+    </div>
+    {%endblock body%}
+</body>
+</html>

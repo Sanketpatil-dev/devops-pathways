@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{%extends 'template.html'%}
+<html>
+<head>
+  {%block head%}
+  <title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="static/index.css" rel="stylesheet">
+{%endblock head%}
+</head>
+
+<body>
+  
+{%block body%}
+
+<div class="container">
+	<video id="bgVideo" preload="true" autoplay loop muted>
+		<source src="static/video2.mp4" type="video/mp4" >
+	</video> 
+ </div>
+
+<hr>
+
+
+<div >
+  <div class="row" >
+    <div class="column" >
+      <div class="slideshow-container center" >
+
+        <h3 class="text-uppercase font-weight-bold">Commitment to Safety</h3>
+
+        <p>The strong safety culture at Pathways is supported by continual investments 
+          in a top-of-the-line fleet, cutting-edge safety gear, regular training, and 
+          strict sanitary procedures. As opposed to the industry norm of every six and a 
+          half years, we continue to invest in our current fleet of Volvo 9700 coaches each 
+          year, giving our drivers access to vital support systems and the newest technologies
+           for passenger comfort. All of our coaches now come equipped with Volvo's Driver Support 
+           System (DSS), which includes AEBS (advanced emergency braking and front collision warning systems),
+            LKS (lane keeping support), and ACC (adaptive cruise control). Pathways was honored to take part in
+             the DSS testing process because it has a history of being the first to introduce innovative ideas
+              in driver and passenger safety..</p>
+      </div>
+  </div>
+  
+    <div class="column " >
+      <div class="slideshow-container center" >
+        <img src= "static/safty.jpg" width="60%" style="padding-left:50px;"> 
+    </div>
+  </div>  
+ </div>
+</div>
+
+<hr>
+
+<div >
+  <div class="row" style="background:#F1E6BD">
+    <div class="column" >
+      <div class="slideshow-container center" >
+
+        <img src= "static/schoolbus.jpg" width="90%" style="padding-left:50px;">
+      </div>
+  </div>
+  
+    <div class="column " >
+      <div class="slideshow-container center" >
+      <h3 class="text-uppercase font-weight-bold">Company</h3>
+
+        <p>Ireland's leading intercity luxury coach service, Pathways, offers quick, flexible, and dependable routes
+           that keep passengers moving in comfort and style. We take great satisfaction in providing the highest level
+            of luxury and safety onboard our cutting-edge fleet of Volvo, Mercedes, and Avats Scania Eclipse coaches, 
+            with up to 20 daily return services starting at just €2 one way. Onboard one of the newest coach fleets on
+             Irish roads today, our customers enjoy the ultimate coach experience with air conditioning, reclining seats, 
+             free WIFI, on-board charging facilities for phones and computers, restroom facilities, and CCTV. 
+    </div>
+  </div>  
+ </div>
+</div>
+
+
+<script>
+  let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+let i;
+let slides = document.getElementsByClassName("mySlides");
+for (i = 0; i < slides.length; i++) {
+  slides[i].style.display = "none";  
+}
+slideIndex++;
+if (slideIndex > slides.length) {slideIndex = 1}    
+for (i = 0; i < slides.length; i++) {
+  slides[i].className = slides[i].className.replace(" active", "");
+}
+slides[slideIndex-1].style.display = "block";  
+slides[slideIndex-1].className += " active";
+setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+{%endblock body%}
+</body>
+</html> 

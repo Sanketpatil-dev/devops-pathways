@@ -1,0 +1,48 @@
+{% extends 'template.html'%}
+    {%block head%}
+    <style>
+        video {
+	
+            width: 90%;
+            height: 25em;
+            object-fit: cover;
+            transition: all 150ms linear;
+            z-index: 10;
+            
+          }
+          
+          .container {
+            width: 100%;
+            padding-left:70px; 
+            padding-right:70px
+            background-color: rgba(0, 0, 0, 0.5);
+            
+            
+          }
+    </style>
+    <title> About us</title>
+    {%endblock head%}
+    {%block body%}
+    
+        <body>
+            <img src="static/logo.jpg" width="100" style = "padding-left:70px; padding-right:70px">
+            <h2 style = "padding-left:70px; padding-right:70px">The bus is ours but the destination is yours</h2>
+            <div class="container">
+                <video id="bgVideo" preload="true" autoplay loop muted height="100">
+                    <source src="static/avideo.mp4" type="video/mp4" >
+                </video> 
+             </div>
+            <div style="background:#FBE8FF">
+            <p style = "padding-left:70px; padding-right:70px">Pathways offers direct, frequent bus service all around Ireland.<br>
+              
+                 Pathway is the quickest and most convenient method to reach an unmatched number of locations since we are the biggest coach network linking travellers across the island of Ireland to who and what important to them.<br>
+                 Our up-to-date fleet of luxurious coaches provides a convenient and affordable alternative to the effort and stress of navigating crowded town centers and increasingly scarce parking.<br>
+                 Tickets may be purchased at the time of boarding any of our Expressway routes, however customers with seat reservations will board first. Seats for your preferred service will become available on a first-come, first-served basis after all pre-booked passengers have boarded.<br>
+                 The fleet of pathways has charging stations, so you can travel stress-free while your kids ride in safety. For prompt transportation to wherever you're going, the bulk of our routes offer hourly services. Additionally, our routes allow you to connect with onboard Wi-Fi while traveling in style to major airports around the nation in our extra-comfy leather seats.  
+            </p>
+        </div>
+               
+        </body>
+ 
+    {%endblock body%}
+

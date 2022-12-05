@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+{%extends 'template.html'%}
+<head>
+    {%block head%}
+    <title>Ticket Booking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link name="payment" href="payment.html">
+
+
+    <style>
+        .ctn {
+            font-size: 17px;
+            margin-top: 5%;
+            margin-left:25%;
+            margin-right:25%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: -ms-flexbox;
+            /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap;
+            /* IE10 */
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+
+        .col-25 {
+            -ms-flex: 15%;
+            /* IE10 */
+            flex: 15%;
+        }
+
+        .col-50 {
+            -ms-flex: 50%;
+            /* IE10 */
+            flex: 50%;
+        }
+
+        .col-75 {
+            -ms-flex: 75%;
+            /* IE10 */
+            flex: 75%;
+        }
+
+        .col-25,
+        .col-50,
+        .col-75 {
+            padding: 0 10px;
+        }
+
+        .container {
+            background-color: #F1E6BD;
+            padding: 25px 20px 15px 20px;
+            border: 1px solid lightgrey;
+            border-radius: 3px;
+        }
+
+        input[type=text] {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type=tel]{
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type=date]{
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type=number] {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        select[name=place] {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        label {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .icon-container {
+            margin-bottom: 10px;
+            padding: 7px 0;
+            font-size: 14px;
+        }
+
+        .btn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            width: 100%;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            color: black;
+        }
+
+        hr {
+            border: 1px solid lightgrey;
+        }
+
+        span.price {
+            float: right;
+            color: grey;
+        }
+
+        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+        @media (max-width: 800px) {
+            .row {
+                flex-direction: column-reverse;
+                width: 100%;
+                margin-bottom: 20px;
+                padding: 15px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+            }
+
+            .col-25 {
+                margin-bottom: 20px;
+                width: 100%;
+                margin-bottom: 20px;
+                padding: 15px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+            }
+        }
+
+        div.elem-group {
+            margin: 10px 0;
+        }
+
+        div.elem-group.inlined {
+            width: 49%;
+            display: inline-block;
+            float:left;
+            margin-left: 1%;
+        }
+
+        label {
+            display: block;
+            font-family: 'Nanum Gothic';
+            padding-bottom: 10px;
+            font-size: 1.25em;
+        }
+
+        div.elem-group.inlined input {
+            width: 50%;
+            display: inline-block;
+        }
+    </style>
+    {%endblock head%}
+</head>
+
+<body>
+{%block body%}
+<div class="ctn">
+    <div class="row">
+        <div class="col-75">
+            <div class="container">
+                <form action="/tbooking" method="POST">
+                    {%csrf_token%}
+
+                    <div class="row">
+                        <div class="col-50">
+                            <h3>BOOK FOR THE RIDE</h3>
+                            <label for="pname"><i class="fa fa-user"></i> Passenger Name</label>
+                            <input type="text" id="pname" name="pname" placeholder="John M. Doe">
+                            <label for="pemail"><i class="fa fa-envelope"></i> Email</label>
+                            <input type="text" id="pemail" name="pemail" placeholder="john@example.com">
+                            <label for="pnum"><i class="fa fa-phone" style="font-size:24px;color:black"></i> Phone
+                                Number</label>
+                            <input type="tel" id="pnum" name="pnum" maxlength="10">
+
+
+
+
+                            <div class="row">
+                                <div class="col-50">
+                                    <label for="clocation">Current Location</label>
+
+                                    <select name="clocation" id="clocation">
+                                        <option value="Select">Select</option>
+                                        <option value="Dublin">Dublin</option>
+                                        <option value="Cork">Cork</option>
+                                        <option value="Donegal">Donegal</option>
+                                        <option value="Galway">Galway</option>
+                                        <option value="Kildare">Kildare</option>
+                                        <option value="Mayo">Mayo</option>
+                                        <option value="Wicklow">Wicklow</option>
+                                        <option value="Limerick">Limerick</option>
+                                        <option value="Longforg">Longford</option>
+                                        <option value="Waterford">Waterford</option>
+                                        <option value="Westmeath">Opel</option>
+                                        <option value="Wexford">Wexford</option>
+
+                                    </select>
+                                </div>
+                                <div class="col-50">
+                                    <label for="destination">Final Destination</label>
+                                    <select name="destination" id="destination">
+                                        <option value="Select">Select</option>
+                                        <option value="Wexford">Wexford</option>
+                                        <option value="Cork">Cork</option>
+                                        <option value="Donegal">Donegal</option>
+                                        <option value="Galway">Galway</option>
+                                        <option value="Kildare">Kildare</option>
+                                        <option value="Mayo">Mayo</option>
+                                        <option value="Wicklow">Wicklow</option>
+                                        <option value="Limerick">Limerick</option>
+                                        <option value="Longforg">Longford</option>
+                                        <option value="Waterford">Waterford</option>
+                                        <option value="Westmeath">Opel</option>
+                                        <option value="Dublin">Dublin</option>
+
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-50">
+                                    <label for="sdate">Date</label>
+                                    <input type="date" id="sdate" name="sdate">
+                                </div>
+                            </div>
+
+                            <div class="elem-group inlined">
+                                <label for="adults">Adults</label>
+                                <input type="number" id="adults" name="adults" placeholder="1" min="1" required>
+                            </div>
+                            <div class="elem-group inlined">
+                                <label for="child">Children</label>
+                                <input type="number" id="child" name="child" placeholder="1" min="0" required>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+            <input type="submit" value="Continue for Payment" class="btn">
+            </form>
+        </div>
+    </div>
+{%endblock body%}
+    </body>
+
+</html>

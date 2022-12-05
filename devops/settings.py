@@ -26,7 +26,8 @@ SECRET_KEY = '5m8k39#m-rt^7sutksei6em@l(gega)f-0v29+vc)4gi$bl13g'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'devops-prod-pathways.azurewebsites.net'
+    'devops-prod-pathways.azurewebsites.net',
+    '127.0.0.1'
 ]
 
 

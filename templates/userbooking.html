@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-
+{% extends 'template.html'%}
 <head>
+    {%block head%}
     <title>Ticket History</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -74,9 +75,9 @@
         }
     </style>
 </head>
-
+{%endblock head%}
 <body>
-
+{% block body%}
     <h2>MY BOOKING</h2>
    
 
@@ -119,7 +120,7 @@
         // Get the element with id="defaultOpen" and click on it
         document.getElementById("defaultOpen").click();
     </script>
-
+    {%endblock body%}
 </body>
 
 </html>
